@@ -1,0 +1,35 @@
+<div>
+  <h1>{{ title }}</h1>
+</div>
+<div class="row" class="card flex-md-row mb-4 shadow-sm h-md-250" *ngFor="let loan of loans"
+  [class.selected]="loan === selectedLoan">
+    <div class="col-md-4">
+      <div class="card-body d-flex flex-column align-items-start">
+        <strong class="d-inline-block mb-2 text-success">{{ loan.totalLoanAmount | currency:'GBP':'symbol'}}</strong>
+        <h3 class="mb-0">
+          <a class="text-dark" href="#" routerLink="/loan/{{loan.id}}">{{loan.bank}}</a>
+        </h3>
+        <div class="mb-1 text-muted">Total loan amount : {{loan.totalLoanAmount}}</div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+        <h5 class="card-title">
+          Interest
+        </h5>
+        <p class="card-text">
+          Max:{{loan.interestMax}}
+        </p>
+        <p class="card-text">
+          Min:{{loan.interestMin}}
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+        <h5 class="card-title">Monthly Rate</h5>
+        <p class="card-text">{{loan.monthlyRate}}</p>
+        <a href="#" class="btn btn-primary" routerLink="/loan/{{loan.id}}">Select</a>
+      </div>
+    </div>
+</div>

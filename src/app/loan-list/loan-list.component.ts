@@ -12,7 +12,6 @@ export class LoanListComponent implements OnInit {
 
   }
   title = 'Loan List';
-  selectedLoan: Loan;
   loans : Loan[];
 
   ngOnInit() {
@@ -23,8 +22,5 @@ export class LoanListComponent implements OnInit {
     this.loanService.getLoans().subscribe(loans => this.loans = loans);
   }
 
-  onSelect(loan: Loan): void {
-    this.selectedProduct = loan;
-  }
 
 }

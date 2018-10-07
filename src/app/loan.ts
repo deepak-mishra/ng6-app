@@ -5,5 +5,5 @@ export class Loan {
   interestMax: number;
   monthlyRate: number;
   totalLoanAmount: number;
-  flags: Array<number>;
+  flags: Array<string>= ['a', 'b'];
 }

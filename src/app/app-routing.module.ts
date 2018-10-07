@@ -5,12 +5,12 @@ import { LoanDetailComponent }      from './loan-detail/loan-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/loans', pathMatch: 'full' },
-  { path: 'loans', component: LoanListComponent }
+  { path: 'loans', component: LoanListComponent },
   { path: 'loan/:id', component: LoanDetailComponent }
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ]
+  imports: [ RouterModule.forRoot(routes) ],
   declarations: []
 })
 

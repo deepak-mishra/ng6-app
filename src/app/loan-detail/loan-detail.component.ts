@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { Loan } from '../loan';
 import { LoanService } from '../loan.service';
 @Component({
   selector: 'app-loan-detail',
@@ -8,13 +9,13 @@ import { LoanService } from '../loan.service';
   styleUrls: ['./loan-detail.component.css']
 })
 export class LoanDetailComponent implements OnInit {
-  @Input() loan: Loan;
+  @Input() loan: Loan[];
   constructor(
     private route: ActivatedRoute,
     private loanService: LoanService,
     private location: Location
   ) {}
-
+  loan: Loan[];
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
     this.loanService.getLoanByID(id)

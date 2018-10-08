@@ -13,7 +13,7 @@ export class LoanService {
     return of(LOANS);
   }
 
-  getLoanByID(id: number): Observable<Loan[]> {
+  getLoanByID(id: number): Observable<any> {
     return of(LOANS.find(loan => loan.id === id));
   }
 

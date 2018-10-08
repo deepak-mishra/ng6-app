@@ -15,7 +15,7 @@ export class LoanDetailComponent implements OnInit {
     private loanService: LoanService,
     private location: Location
   ) {}
-  loan: Loan[];
+
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
     this.loanService.getLoanByID(id)
